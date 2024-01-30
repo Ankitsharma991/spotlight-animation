@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background: #0a0018;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+}
+
+main {
+  width: 80ch;
+  max-width: 100%;
+}
+
+.card {
+  background: transparent;
+  width: 200px;
+  aspect-ratio: 4 / 3;
+  position: relative;
+  transition: background 0.1s;
+  border: 1px solid rgba(121, 120, 120, 0.05);
+}
+
+.card:hover {
+  --active: 1;
+}
+
+.card:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      circle at calc(var(--x) * 1px) calc(var(--y) * 1px),
+      rgba(0, 255, 255, 0.4),
+      transparent 8vmin
+    ),
+    transparent;
+  background-attachment: fixed;
+  pointer-events: none;
+  mask: linear-gradient(aqua, aqua) 50% 0 / 100% 2px no-repeat,
+    linear-gradient(aqua, aqua) 50% 100% / 100% 2px no-repeat,
+    linear-gradient(aqua, aqua) 0 50% / 2px 100% no-repeat,
+    linear-gradient(aqua, aqua) 100% 50% / 2px 100% no-repeat;
+}
