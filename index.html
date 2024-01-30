@@ -17,6 +17,15 @@
         <li class="card"></li>
       </ul>
     </main>
-    <script type="module" src="./index.js" />
+    <script>
+      window.onload = function () {
+        const updateCursor = ({ x, y }) => {
+          document.documentElement.style.setProperty("--x", x);
+          document.documentElement.style.setProperty("--y", y);
+        };
+
+        document.body.addEventListener("pointermove", updateCursor);
+      };
+    </script>
   </body>
 </html>
